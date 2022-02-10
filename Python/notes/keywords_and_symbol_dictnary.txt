@@ -1,0 +1,2 @@
+> : 
+it mean all. only can use in square brackets of any property of varable.

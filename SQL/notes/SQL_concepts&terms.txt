@@ -1,0 +1,316 @@
+                              ---------------------------------------------
+                                            Normalization
+                              ---------------------------------------------
+
+Normalization is the process of organizing data to avoid duplication and redundancy.
+
+Its advantages are:-
+-> Minimized duplicate data.
+-> Minimized or avoid data modification issues.
+-> Simplify queries.
+
+Normalization are divided into four rules that are called:-
+-> First Normal Form String
+-> Second Normal Form
+-> Third Normal Form
+
+***********************************
+                First Normal Form
+***********************************
+
+It ensure that each set of coloumn must have an unique value(unique and single).
+
+Here is an example:-
+Here we have an table of student, there age, course enrol by them.
+       ______________________________________
+       |   Student   |   Age  |    Course   |
+       |-------------|--------|-------------|
+       |     Adam    |   15   | CR001,CR005 |
+       |     Alex    |   14   |    CR005    |
+       |    Stuart   |   17   |    CR005    |
+       |_____________|________|_____________|    . . . (Table-1)
+
+In Table-1 we have multipule values in a single row. Its violating First Normal Form.
+in order to satisfy first Normal Form we can convert Adam's row in to multiple rows
+(Given in table-2).
+
+         ____________________________________
+         |   Student   |  Age  |   Course   |
+         |-------------|-------|------------|
+         |    Adam     |   15  |    CR001   |
+         |    Adam     |   15  |    CR005   |
+         |    Alex     |   14  |    CR005   |
+         |    Stuart   |   17  |    CR005   |
+         |_____________|_______|____________|    . . . (Table-2)
+
+***********************************
+                Second Normal Form
+***********************************
+
+It ensure that all the values should be depend upon primary key.(its main goal is make table independent).
+before satisfy second normal form a table should satisfy first normal form.
+
+Here is an example of that...
+         ____________________________________
+         |   Student   |  Age  |   Course   |
+         |-------------|-------|------------|
+         |    Adam     |   15  |    CR001   |
+         |    Adam     |   15  |    CR005   |
+         |    Alex     |   14  |    CR005   |
+         |    Stuart   |   17  |    CR005   |
+         |_____________|_______|____________|    . . . (Table-3)
+
+in Table-3 primary key is student and age,course depends directly on student.
+
+***********************************
+                Third Normal Form
+***********************************
+
+It ensure that all non-prime keys should directly depend on primary key(should not by any another non-prime key).
+it should satisfy First and Second Normal Form. 
+
+Here is an example of that...
+
+_________________________________________________________________
+| Student_id | Student_name | DOB | Street | City | State | Zip |
+|------------|--------------|-----|--------|------|-------|-----|
+|____________|______________|_____|________|______|_______|_____| ...(Table-4)
+
+in the Table-4 student_id is prime key, but Street,City and State depends upon Zip.
+The dependencies between zip and other non-primary attribute are called "transitive dependency".
+after applying 3NF(Third Normal Form) we get two tables.
+_________________________________________
+| Student_id | Student_name | DOB | Zip |
+|------------|--------------|-----|-----|
+|____________|______________|_____|_____| ...(Table-5)
+
+Table-5: Student_id is prime key.
+_______________________________
+| Street | City | State | Zip |
+|--------|------|-------|-----|
+|________|______|_______|_____| ...(Table-6)
+
+Table-6: Zip is prime key.
+
+                              ---------------------------------------------
+                                            Data Types In SQL
+                              ---------------------------------------------
+
+
+there are three data types in SQL that are:-
+-> String
+-> Numeric
+-> Date and Time
+
+***********************************
+            String data type in SQL
+***********************************
+________________________________________________________________________________________________________________________________
+|Data type	   |                  Description	          |       Max size	        |           Storage            |
+|------------------|----------------------------------------------|-----------------------------|------------------------------|
+|char(n)	   |                 Fixed width character string |  8,000 characters	        |        Defined width         |
+|varchar(n)	   |       Variable width character string        |  8,000 characters           |    2 bytes + number of chars |
+|varchar(max)      |        Variable width character string       | 1,073,741,824 characters    |   2 bytes + number of chars  |
+|text              |        Variable width character string       |   2GB of text data          |   4 bytes + number of chars  |
+|nchar             |            Fixed width Unicode string        |    4,000 characters         |     Defined width x 2        |
+|nvarchar          |           Variable width Unicode string      |    4,000 characters	        |                              |
+|nvarchar(max)     |          Variable width Unicode string       |  536,870,912 characters	|                              |
+|ntext             |          Variable width Unicode string       |   2GB of text data	        |                              |
+|binary(n)         |             Fixed width binary string        |   8,000 bytes	        |                              |
+|varbinary         |            Variable width binary string      |   8,000 bytes	        |                              |
+|varbinary(max)    |           Variable width binary string       |       2GB	                |                              |
+|image             |           Variable width binary string       |       2GB                   |                              |
+|__________________|______________________________________________|_____________________________|______________________________|
+
+***********************************
+           Numeric data type in SQL
+***********************************
+
+____________________________________________________________________________________________________________
+|Data type            |                            Description                                  | Storage  |
+|---------------------|-------------------------------------------------------------------------|----------|
+|bit                  |                      Integer that can be 0, 1, or NULL	                |          |
+|tinyint              |                     Allows whole numbers from 0 to 255                  |  1 byte  |
+|smallint             |                Allows whole numbers between -32,768 and 32,767          |  2 bytes |
+|int                  |           Allows whole numbers between -2,147,483,648 and 2,147,483,647 |  4 bytes |
+|bigint               |          Allows whole numbers between -9,223,372,036,854,775,808        |          |
+|                     |          and 9,223,372,036,854,775,807 8 bytes                          |          |
+|decimal(p,s)         |Fixed precision and scale numbers.Allows numbers from -10^38 +1 to 10^38 |5-17 bytes|
+|                     |–1. The p parameter indicates the maximum total number of digits that can|          |
+|                     |be stored (both to the left and to the right of the decimal point). p    |          |
+|                     |must be a value from 1 to 38. Default is 18.The s parameter indicates the|          |
+|                     |maximum number of digits stored to the right of the decimal point. s must|          |
+|                     |be a value from 0 to p. Default value is 0                               |          |
+|numeric(p,s)         |Fixed precision and scale numbers.Allows numbers from -10^38 +1 to 10^38 |5-17 bytes|
+|                     |–1.The p parameter indicates the maximum total number of digits that can |          |
+|                     |be stored (both to the left and to the right of the decimal point). p    |          |
+|                     |must be a value from 1 to 38. Default is 18.The s parameter indicates the|          |
+|                     |maximum number of digits stored to the right of the decimal point. s must|          |
+|                     |be a value from 0 to p. Default value is 0                               |          |
+|smallmoney           |  Monetary data from -214,748.3648 to 214,748.3647                       |  4 bytes |
+|  money              | Monetary data from -922,337,203,685,477.5808 to 922,337,203,685,477.5807|  8 bytes |
+|float(n)             |Floating precision number data from -1.79E + 308 to 1.79E + 308.The n    |4or8 bytes|
+|                     |parameter indicates whether the field should hold 4 or 8 bytes. float(24)|          |
+|                     |holds a 4-byte field and float(53) holds an 8-byte field. Default value  |          |
+|                     |of n is 53.                                                              |          |
+|real                 |   Floating precision number data from -3.40E + 38 to 3.40E + 38         |  4 bytes |
+|_____________________|_________________________________________________________________________|__________|
+
+***********************************
+     Date and Time data type in SQL
+***********************************
+
+____________________________________________________________________________________________________________
+|Data type        |                               Description                                     Storage  |
+|-----------------|--------------------------------------------------------------------------|-------------|
+|datetime         |           From January 1, 1753 to December 31, 9999 with an accuracy of  |             |
+|                 |           3.33 milliseconds                                              |     8 bytes |
+|datetime2        |           From January 1, 0001 to December 31, 9999 with an accuracy of  |             |
+|                 |           100 nanoseconds                                                |    6-8 bytes|
+|smalldatetime    |           From January 1, 1900 to June 6, 2079 with an accuracy of       |             |
+|                 |           1 minute                                                       |    4 bytes  |
+|date             |           Store a date only. From January 1, 0001 to December 31, 9999   |    3 bytes  |
+|time             |           Store a time only to an accuracy of 100 nanoseconds            |    3-5 bytes|
+|datetimeoffset   |           The same as datetime2 with the addition of a time zone offset  |   8-10 bytes|
+|timestamp        |           Stores a unique number that gets updated every time a row gets |             |
+|                 |           created or modified. The timestamp value is based upon an      |             |
+|                 |           internal clock and does not correspond to real time. Each table|             |
+|                 |           may have only one timestamp variable	                     |             |
+|_________________|__________________________________________________________________________|_____________|
+
+***********************************
+            Other data type in SQL
+***********************************
+__________________________________________________________________________________________________________________________
+|Data type                |                              Description                                                     |
+|-------------------------|----------------------------------------------------------------------------------------------|
+|sql_variant              |     Stores up to 8,000 bytes of data of various data types, except text, ntext, and timestamp|
+|uniqueidentifier         |                 Stores a globally unique identifier (GUID)                                   |
+|xml                      |                      Stores XML formatted data. Maximum 2GB                                  |
+|cursor                   |             Stores a reference to a cursor used for database operations                      |
+|table                    |                 Stores a result-set for later processing                                     |
+|_________________________|______________________________________________________________________________________________|
+
+
+
+                              ---------------------------------------------
+                                            Queries In SQL
+                              ---------------------------------------------
+
+SQL quories are catogrise in:-
+-> Data Definition Language(DDL)
+-> Data ManiPulation Language(DML)
+-> Data Control Language(DCL)
+-> Transcacting Control Statement(TCS)
+-> Session Control Statement(SCS)
+
+***********************************
+      Data Definition Language(DDL)
+***********************************
+
+Data definition statement are use to define the database structure or table.
+
+_____________________________________________________________________________
+|Statement   |               Description                                    |
+|------------|--------------------------------------------------------------|
+|CREATE      |          Create new database/table.                          |
+|ALTER       |      Modifies the structure of database/table.               |
+|DROP        |          Deletes a database/table.                           |
+|TRUNCATE    |   Remove all table records including allocated table spaces. |
+|RENAME      |           Rename the database/table.                         |
+|____________|______________________________________________________________|
+
+***********************************
+    Data Manipulation Language(DML)
+***********************************
+
+Data manipulation statement are use for managing data within table object.
+________________________________________________________________________________________________
+|Statement             |                            Description                                |
+|----------------------|-----------------------------------------------------------------------|
+|SELECT                |                      Retrieve data from the table.                    |
+|INSERT                |                       Insert data into a table.                       |
+|UPDATE                |               Updates existing data with new data within a table.     |
+|DELETE                |               Deletes the records rows from the table.                |
+|MERGE                 |              MERGE (also called UPSERT) statements to INSERT new      |
+|                      |              records or UPDATE existing records depending on          |
+|                      |              condition matches or not.                                |
+|LOCK TABLE            |              LOCK TABLE statement to lock one or more tables in       |
+|                      |              a specified mode. Table access denied to a other users   |
+|                      |              for the duration of your table operation.                |
+|CALL EXPLAIN PLAN     |              Statements are supported in PL/SQL only for executed     |
+|                      |              dynamically. CALL a PL/SQL program or EXPLAIN PATH access|
+|                      |              the data path.                                           |
+|______________________|_______________________________________________________________________|
+
+***********************************
+         Data Control Language(DCL)
+***********************************
+
+Data control statement are use to give privileges to access limited data.
+______________________________________________________________________________________________________________
+|Statement          |                         Description                                                    |
+|-------------------|----------------------------------------------------------------------------------------|
+|GRANT              |          Gives privileges to user for accessing database data.                         |
+|REVOKE             |                Take back for given privileges.                                         |
+|ANALYZE            |       ANALYZE statement to collect statistics information about index, cluster, table. |
+|AUDIT              |       To track the occurrence of a specific SQL statement or all SQL statements during |
+|                   |       the user sessions.                                                               |
+|COMMENT            |       Write comment to the data table.                                                 |
+|___________________|________________________________________________________________________________________|
+
+***********************************
+Transaction Control Statement (TCS)
+***********************************
+
+Transaction control statement are use to apply the changes permanently save into database.
+
+_____________________________________________________________________________________________________________________
+|Statement         |                        Description                                                             |
+|------------------|------------------------------------------------------------------------------------------------|
+|COMMIT            |              Permanent work save into database.                                                |
+|ROLLBACK          |     Restore database to original form since the last COMMIT.                                   |
+|SAVEPOINT         |     Create SAVEPOINT for later use ROLLBACK the new changes.                                   |
+|SET TRANSACTION   |     SET TRANSACTION command set the transaction properties such as read-write/read only access.|
+|__________________|________________________________________________________________________________________________|
+
+***********************************
+    Session Control Statement (SCS)
+***********************************
+
+______________________________________________________________________________________________________________________________
+|Statement        |                          Description                                                                     |
+|-----------------|----------------------------------------------------------------------------------------------------------|
+|ALTER SESSION    |   ALTER SESSION statement to modify conditions or parameters that are affect to your database connection.|
+|SET ROLE         |   SET ROLE statement to enable or disable the roles that are currently enabled for the session.          |
+|_________________|__________________________________________________________________________________________________________|
+
+                              ---------------------------------------------
+                                            Various Constraints
+                              ---------------------------------------------
+
+constrains enforce rules on table when it insert rows.
+_____________________________________________________________________
+| Constraint |                         Description                  |
+|------------|------------------------------------------------------|
+|   NOT NULL |     Specifies that a column must have some value.    |
+|   UNIQUE   |     Specify that column must have unique values.     |
+| PRIMARY KEY| Specify a column or a set of columns that uniquely   |
+|            | identifies a row. It does not allow null values.     |
+| FOREIGN KEY|Foreign key is a column(s) that references a column(s)|
+|            |of a table.                                           |
+|    CHECK   | Specifies a condition that must be satisfied by all  |
+|            | the rows in a table.                                 |
+|____________|______________________________________________________|
+
+
+                              ---------------------------------------------
+                                             Facts about SQL
+                              ---------------------------------------------
+-> SQL is not a charter sensetive.
+
+                              ---------------------------------------------
+                                              Terms in SQL
+                              ---------------------------------------------
+-> Tuples: a single row is called tuples.
+-> Attribute: a single column is called attribute.

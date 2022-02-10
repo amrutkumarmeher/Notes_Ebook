@@ -1,0 +1,24 @@
+......................................TIME............................(In python)(Module)
+
+
+>time()
+it is a function which show you the stopwatch time since your code is running.
+
+>ctime()
+it returns the current time of your pc.
+
+>sleep()
+it is a punction that stop processing of the code untill a period of time.
+...ArgumentForm: (<seconds>)
+
+>localtime()
+it returns the date and time in time.struct_time format
+
+>gmtime()
+it returns time.struct_time in UTC format
+
+>mktime()
+it returns the seconds passed since epoch pas output
+
+>asctime()
+it return a string represent the ctime.

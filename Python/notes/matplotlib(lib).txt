@@ -1,0 +1,18 @@
+...................................MATPLOTLIB....................................
+
+Matplotlib is a good python liberary for data analysis. it help to represent data-
+-in any graphical model.
+
+Func}.subplot()
+it is a function that make the basic UI for represation of data in graph without-
+-any data.
+
+Func}.show()
+it is a function that show the whole logic of an object that you use to represent-
+the data.
+
+Func}.plot()
+it is a function take the data in the form of list and make a graph based on the data.
+
+sub-mod}matplotlib.pyplot
+it is a liberary in matplotlib that use for graphical represantion of data by its value.

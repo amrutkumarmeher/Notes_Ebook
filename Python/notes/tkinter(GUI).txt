@@ -1,0 +1,114 @@
+kTKINTER(GUI)
+
+>Tk()
+a class that set all the basic setting for gui.
+
+> mainloop()
+a loop that run untill your programe is running.
+
+>geometry()
+a function that give the shape to the window.
+it take argument as str.
+...ArgumentForm> "340x100"
+
+>minsize()
+a function that limitate the amount of minimizing the size of window by user.
+...ArgumentForm> (xxx,xxx)
+
+>maxsize()
+a function that limitate the amount of maximizing the size of window by user.
+...ArgumentForm> (xxx,xxx)
+
+>resizable()
+a property that restrict resize and allow the user to resize upto some pixel.
+...ArgumentForm>(0,0)
+
+>Entry()
+it create a inputing bar. we have to pack this also.
+...ArgumentForm>(<windowsVarName>)
+...options>1.bg
+           2.fg
+             ...ArgumentForm> font=("<name>","<size>")
+           3.width
+           4.bd
+           5.font
+           6.command
+           7.textvarable
+              In order to be able to retrieve the current text from your entry widget,-
+-you must set this option to an instance of the StringVar class.
+  >get()
+   it is a function that return the value what ever you have entered in entry box
+
+
+>Label()
+a class that take all the thing that have to show in window of programme.
+...Parameters>text="<your text here>" it add your all text here.
+             >bd/background ="<add your image here>"
+             >fg/foreground = "<add your image here>"
+             >font="<add your font here>(add a font that present in your computer)"
+               ...ArgumentForm>("<your font>","its size" x,"bold"-optional)#bold can decrease-
+-your text thickness.
+               ...ArgumentForm(1)>("<your font> <its size> <border>")
+             >pady="<add your vertical axis>(y axis)"
+               ...ArgumentForm>xx
+             >padx="<add your horizantal axis>(x axis)"
+               ...ArgumentForm>xx
+             >relief="<add border style" # it add border to the text 
+               ...ArgumentForm>"sunken/raised/groove/ridge/solid/flat"
+               ...ArgumentForm(1)>SUNKEN/RAISE/GREOVE/RIDGE/SOLID/FLAT
+             >borderwith=x-"<give your border with>"
+>pack()
+a function that pack all attributes of label class.
+...Parameters>anchor="<give direction of the pack where it have to lye>"
+                ...ArgumentForm>"n"#both are directions. 8 directions are avable in here
+              >side=give the side where it will lye
+                ...ArgumentForm>"top/bottom/left/right"
+              >padx=give x axis
+                ...ArgumentForm>x(int)
+              >pady=give y axis
+                ...ArgumentForm>y(int)
+              >fill=it fill the colour background in all the window.
+                ...ArgumentForm>X/Y # it can fill with colour by axis.
+                ...ArgumentForm>"x/y/both" #both will fill with colour from both axis.
+
+>PhotoImage()
+a class that take image file as an attribute.
+we have some limitation to use multiple formats of images, one of the famous format jpeg it-
+- does not support.
+some image formats like png it support.
+
+>title()
+it is a function that can change the title of the window.
+
+>iconbitmap()
+it is a function that set icon in window
+...ArgumentForm>"<path>"
+
+,,,,,,,,,,,,,,,,,,,,,,WIDGETS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+widget is a element of a GUI that display the elements and information or provide specific way-
+-for user to intract with the OS or the application
+
+There are many widgets in tk, they are:-
+1.> Label()#class
+it use to show images and text in single definition.
+
+   >> there are three ways to show the label in screen:
+
+       -pack()
+        it will show label in any where on window(automatically).
+
+       -grid()
+        it will show label in row and columns
+
+       -place()
+        it will place your label according x and y axis given by you
+        ...ArgumantForm>(x=<val>,y=<val>)
+        ...Option>1.height,etc.
+     
+2.> .geometry()#function
+it is a function that use to set size or change size of the window.
+>it take argument in str...Argument format> <obj>.geometry("100x500")
+
+3.> .button()#class
+it is a class that show buttions in windows
+...ArgumentForm>(<windowVarName>,text="<text>",options)

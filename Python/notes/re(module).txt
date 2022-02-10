@@ -1,0 +1,12 @@
+regex is a module that allows us  to search any regular pattern in a string.
+
+Func:
+>.search(str(for search),str(document))
+it will search for any regular pattern(str for search) in document.
+
+>.findall(pattern,str(document))
+it will serch and collect(in list) matched strings that they got in document.
+
+>.compile(pattern)
+it will allow you to store your patter in a varable and reuse it.
+

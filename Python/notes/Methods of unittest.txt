@@ -1,0 +1,14 @@
+          METHOD                            CHECKS THAT
+   
+1}     assertEqual(a,b)                       a==b
+2}     assertNotEqual(a,b)                    a!=b
+3}     assertTrue(a,b)                    bool(x) is True
+4}     assertFalse(a,b)                   bool(x) is False
+5}     assertIs(a,b)                          a is b
+6}     assertIsNot(a,b)                     a is not b
+7}     assertIsNone(a)                   a is None/a==None
+8}     assertIsNotNone(a)                a is not None/a!=None
+9}     assertIn(a,b)                           a in b
+10}    assertNotIn(a,b)                      a not in b
+11}    assertIsInstance(a,b)               isinstance(a,b)
+12}    assertNotIsInstance(a,b)           not isinstance(a,b)  

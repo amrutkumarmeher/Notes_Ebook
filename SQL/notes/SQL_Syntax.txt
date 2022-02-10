@@ -1,0 +1,50 @@
+                              ---------------------------------------------
+                                          Create Table Statements
+                              ---------------------------------------------
+
+-> Creating a table:
+    syn-> CREATE TABLE <table name>( <column 1> <data type> , <column 2> <data type>);
+
+-> To select the primary key in the table mention "PRIMARY KEY" after DATA TYPE when creating a column in table.
+
+-> If we want to make compolsury for filling value in a row of an column we have to put the keyword after data type "NOT NULL". by default it is null(means its some rows can be null).
+
+-> If we want to select data base in code then we have to use "USE <data base>" this line before any of the code in for that particular database.
+
+                              ---------------------------------------------
+                                           Alter Table Statements
+                              ---------------------------------------------
+Alter commands use after creating a table. These are add,modify,drop for columns.
+Before using alter it is manitory to use "ALTER" keyword before name of a table and TABLE keyword.
+
+-> Adding an column in a table:
+    syn-> ALTER TABLE <table name> ADD <new column name> <column datatype>;
+
+-> Droping an column in a table:
+    syn-> ALTER TABLE <table name> DROP <column name>;
+
+-> Changing data type and null rule of an column:
+    syn-> ALTER TABLE <table name> ALTER COLUMN <column name> <column datatype> <NULL/NOT NULL(default Null)>;
+
+-> Droping entire table:
+    syn-> DROP TABLE <table name>;
+
+                              ---------------------------------------------
+                                             Selecting data 
+                              ---------------------------------------------
+
+-> selecting rows with a condition.
+    where <condition>
+    where <condition> and <condition>
+    where <condition> or <condition>
+    where not <condition>
+-> select any particular attribute from table.
+    select <column> from table
+    select <column>,<column> from table
+
+                              ---------------------------------------------
+                                             inserting data 
+                              ---------------------------------------------
+
+-> inserting data into a table.
+    insert into <table> (*<columns>) values (*<values>)

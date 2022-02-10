@@ -1,0 +1,127 @@
+} What is pandas?
+pandas is a powerful data structure for data analysis, it help you to manage many types of data.
+
+}which libararies you requires to install it?
+pandas requires Numpy and rest dependencies it install themself.
+
+PYTHON PANDAS LIBARARY WITH CSV:-
+Func} DataFrame(<dict>)
+data frame is a function that help to make your dictnary to convert into CSV.
+
+Func} .to_csv(<ready_CSV_to_save>.csv)
+it save your CSV to system as CSV file.
+
+Func} .head(<number_from_show>)
+it show your CSV file some row(number_upto_show) from first.
+
+Func} .tail(<number_from_show>)
+it show your CSV file some row(number_from_show) from last.
+
+Func} .describe()
+it show your file(CSV file) statics.
+
+Func} .read_csv()
+it read your CSV file and make it usable to use with python.
+it has an parameter skiprow that skip any row number in file.
+it has an parameter header that set your header as your desire.
+it has an parameter nrows that limit the number of rows to read.
+it has an parameter na_values that mention any as null.
+Prop} .columns
+it is a property that show columns of the table.
+
+Func} .to_numpy()
+it is a function that convert your table to numpy array.
+
+Func}.apply()
+it is only for series, it will apply an function on every value of that series.
+...ArgumentForm>(<func>)
+
+Func} s.str.slice()
+it slice your series every element by str indexing.
+...ArgumentForm>(<str index(from)>,<str index(to)>)
+
+prop} .T
+it convert your columns into row and row into column.
+
+Func} .sort_index(axis=0/1)
+it is a function that arrange the index by axis.
+axis=0 = rows
+axis=1 = columns
+you can also it order by add a parameter after axis parameter that is ascending==False.
+it arrange your table in assending index, in it False setting it arrange table in decending order.
+
+Func} .drop(clo/row,axis=0/1)
+it can show a deleted any row or column version of table based in your table.
+it has a parameter inplace=True that change orginal.
+
+prop} .loc[]
+it is a property that show elements in table by conditions and by names of row and columns.
+
+prop} .iloc[]
+it is a property that show elements in table and by index of row and columns.
+
+Func} .reset_index()
+it is a function that re-numbering your rows in table.use in if you deleted any row and where that row present at that place down and up row numbering not matching.
+it has a parameter called drop=True, if you reset index, than a index name column made in the line of numbering, so it not allow to name the column.
+it can also use inplace=True
+
+func} .dropna()
+it removes all NaN or None columns in the table.
+
+Func} .drop_duplicates()
+it remove the extra same elements from the table.
+it has a parameter subset=[<name of column>] can remove same elements from any column.
+it has one more parameter that is keep="first"/"seccond"/False, it can remove both same element if keep=False, if keep="first" it remove first element from matched elements, and if keep="second" it remove second element from it matched element.
+
+Class} ExcelWriter():
+it can write two files at once.
+...ArgumentForm>(<name_to_save>)
+
+Func} .shape()
+it can show lenth and wide of the column.
+
+Func} .info()
+it can show information related to table.
+
+Func} .value_counts()
+it can count length of column.
+it has a parameter dropna=False that also count None or NaN values
+
+Func} .isnull()
+it show the null values in the table by "False".
+
+Func} .notnull()
+it show the valuse is null or not.
+True=null
+False=not null
+
+Func} .corr()
+it can arrange the colume and row pairwise.
+
+Func} .std()
+it is a function that return the standard division of row or columns.
+
+Func} .read_excel()
+it can read an excel file.
+it has a parameter sheet_name that read any particular sheet in this.
+
+Func} .to_excel()
+it save your table as an excel file.
+
+Func} .concat()
+it add your table2 in just below table1.
+it has a parameter called ignore-index= its default is false. it will combine the-
+-table with respective index of index of table1's element and table2's element. if 
+it is True then after combining it will reindex it.
+
+Func} .append()
+it add the new row or column in the table.
+it take ignore_index=.
+
+Func} .set_index():
+it will set an index to your df according your desire.
+index should be an existing column, there value will be the index number.
+...ArgumentForm>(<key(column)>)
+
+Func} .reset_index():
+it will reset your file index into default index.
