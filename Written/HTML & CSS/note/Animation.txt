@@ -1,0 +1,38 @@
+............................................[<- Animation ->].............................................
+
+
+-> Keyframes it used to define initial properties & final properties.
+{syn}: @keyframes <class/id/obj> {
+           from { <properties> }
+           to { <properties> }
+           }
+or {syn}: @keyframes <class/id/obj> {
+           0% { <properties> }
+           50% { <properties> }
+           100% { <properties> }
+           }
+
+///////////////////////////////////////////[< Properties >]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+-> animation-name property:
+name of the animation.
+
+-> animation-duration property:
+How long does the animation run?
+
+-> animation-timing-function property:
+Determines speed curve of the animation.
+
+-> animation-delay property:
+Delay for the start of an animattion.
+
+-> animation-iteration-count property:
+Number of times an animation should run.
+
+-> animation-direction property:
+Specify the direction of the animation.
+
+-> animation property:
+Shorthand of all above property.
+{format}: animation: <AName> <Duration> <ATFunc> <DelayCount> <ADirection>;

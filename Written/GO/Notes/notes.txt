@@ -1,0 +1,5 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>[ Go Lang ]<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+:::::::::::::::::::::::::{ Variables }::::::::::::::::::::::::
+
+> if you want to access a variable or a function outside the code you will have to write its name with captial letter at starting.

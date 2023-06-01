@@ -1,0 +1,85 @@
+..............................................[<- Transforms ->]........................................
+
+These are used to rotate, move, skew or scale elements. They are used to create a 3D effect.
+
+We can use it by transform property.
+{syn}: .child{
+         transform: <func>;
+           }
+we can use transform-origin property to define from where it applies.
+{syn} .child{
+         transform-origin: <center/top/left/bottom/right> <valuefromthere>;
+           }
+
+
+///////////////////////////////[< 2D >]\\\\\\\\\\\\\\\\\\\\\\
+
+These are:
+?=> translate()
+?=> rotate()
+?=> scaleX()
+?=> scaleY()
+?=> skew()
+?=> matrix()
+?=> scale()
+
+-> function translate():
+it will move the object forward.
+{syn}: .child{
+         transform: translate(<val>);
+           }
+-> function rotate():
+it will rotate the object n number of terms.
+{syn}: .child{
+         transform: rotate(<n>turn/<n>deg);
+           }
+[tips]: value can be given by <n>turn or <n>deg.
+-> function scaleX():
+it will expland the element horizantally.
+{syn}: .child{
+         transform: scalex(<val>);
+           }
+-> function scaleY():
+it will expland the element vertically.
+{syn}: .child{
+         transform: scaley(<val>);
+           }
+-> function scale(x,y):
+shorthand of scalex & scaley.
+-> function skew(x,y):
+shorthand of skew.
+{syn}: .child{
+         transform: skew(<n>deg, <n>deg);
+           }
+-> function skewX():
+skew(stretch) from X axis.
+{syn}: .child{
+         transform: skewX(<n>deg);
+           }
+-> function skewY():
+skew(stretch) from Y axis.
+{syn}: .child{
+         transform: skewY(<n>deg);
+           }
+-> function martix(scaleX(),skewY(),skewX(),scaleY(),translationX(),translationY()):
+it shorthand of all the properties.
+{syn}: .child{
+          transform: matrix:(<num>,<num>,<num>,<num>,<num>,<num>);
+           }
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\[< 3D >]///////////////////////////////////////
+
+-> function rotateX():
+it  rotates the object in X-axis.
+{syn}: .child{
+          transform: rotateX(<num>deg);
+          }
+-> function rotateY():
+it  rotates the object in Y-axis.
+{syn}: .child{
+          transform: rotateY(<num>deg);
+          }
+
+
+
+

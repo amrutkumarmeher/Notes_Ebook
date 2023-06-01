@@ -1,0 +1,21 @@
+::::::::::::::::::::::::::::::::::::::::::::{ JavaScript }::::::::::::::::::::::::::::::::::::::::::
+
+> init(): if we define an init function with name "init()" it will simply execute the code as page is fully loaded.
+
+----------------------------[ Events ]-------------------------------------------
+
+> Types of events:
+  -> click: when got clicked
+  -> contextmenu: when got right clicked
+  -> mouseover: hover
+  -> mouseout: out of the element
+  -> submit: when form submitted
+  -> focus: 
+  -> DOMContentLoaded: when page is completely loaded.
+  -> transitionend: transition ended.
+> before using these events as an attribute we have to put "on" before their names.
+> if we have to set event listener by:
+          _________________________________________________________________________
+{syntax}: | let obj = document.getElementById/getElemetsByClasses("<id/class>");  |
+          | obj.addEventListener("eventname",function <functionname>(){code};     |
+          |_______________________________________________________________________|

@@ -1,0 +1,88 @@
+<!DOCTYPE html> : declaration of html page.
+
+--> Html webpage starts with <html>(end: </html>) tag.
+--> html webpage has 2 most important components: <head>(end: </head>) & <body>(end: </body>).
+--> <title>(end: </title>) used to specify title of a webpage.
+--> <img> is used to show image. It can't have any child elements thats why it don't have any closing tag.
+--> <p>(end: </p>) stands for parigraph used to show text.
+--> <style>(end: </style) used to specify CSS script.
+--> <h(1/2/3/4/5/6)>(end: </h<num>) to specify headings.
+--> <a href="<url>">(end: </a>) used to specify a text where we can click to redirect to a link.
+--> <br> used to create line breakers.
+--> <big>(end: </big>) is used to specify little big font then usual.
+--> <small>(end: </small>) is used to specity little small font then usual.
+--> <hr> is used to put a divider there.
+--> <sub>(end: </sub>) is used to write subscript which can be seen smaller than actual script. like CO2. 2 is sunscript.
+--> <sup>(end: </sup>) is used to write superscript which can be seen smaller than actual script but lying at the top. eg: A^2.
+--> <pre>(end: </pre>) is used to write a text as it is with any parsing by HTML.
+--> &#<dec> expression used to denote special character.
+--> <body> tag has 3 most important tags:
+      )-> <header>(end: </header>) it an important tag:
+           }-> <nav>(</nav>) is use to show navigation.
+      )-> <main>(end: </main>) it has too 3 important tags:
+           }-> <section>(end: </section>)
+           }-> <article>(end: </article>)
+           }-> <aside>(end: </aside>)
+      )-> <footer>(end: </footer>)
+--> <div>(end: </div>) is used for creating division in HTML elements. Its like variable.
+--> <span>(end: </span>) is just like <div> but it takes limited space as an element.
+--> <ul>(end: </ul>) is used to display unordered list.
+--> <ol>(end: </ol>) is used to display ordered list.
+--> <li>(end: </li>) is used to specify single list element. it must inside list tag(<ul>/<ol>).
+--> <table>(end: </table>) is used to define table in HTML.
+--> <tr>(end: </tr>) is used to define table row in HTML.
+--> <th>(end: </th>) is used to define table header in HTML, it has an attribute colspan= which can be used to define a single column for <n> number of rows.
+--> <td>(end: </td>) is used to define table data in HTML.
+--> <caption>(end: </caption>) is used to define caption in HTML. mostly it used in table to give a name to it, we can use it just before any row.
+--> <thead>(end: </thead>) is used to define head of a table.
+--> <tbody>(end: </tbody>) is used to define body of a table(rest records).
+--> <form>(end: </form>) is a type of tag used to create forms where users can input cretionals.
+--> <input> inside forms we have input which can be used to input something. it has an attribute placeholder= which can show a watermark in that input bar,it has types:
+      )->button
+      )->checkbox
+      )->color
+      )->date
+      )->datetime
+      )->datetime-local
+      )->file
+      )->images
+      )->email
+      )->month
+      )->hidden
+      )->number
+      )->range
+      )->search
+      )->submit
+      )->tel
+      )->text
+      )->url
+      )->week
+      )->radio: it can be use as a checkbox which could be set with set of checkboxes(we can define a set by name= attribute), but when we click one of them another checkbox previously selected will be unselected.
+--> <label>(end:</label>) tag is used to give lable(radio) to an input tag. it has an attribute for= which can be use to assign an id.
+--> class= it an attribute which can be used to categories tags.
+--> id= it is used to give a unique identifier to individual tags
+--> name= is used as an reference element while processing it in backend
+--> <textarea>(end: </textarea>) is used to make a text area(large rectangle), if we put something inside its tags we can find that text already present without any user input. it has two attributes:
+      )-> cols= which is used to define upto how many column of text it will expand.
+      )-> rows= which is used to define upto how many rows of text it will expland.
+--> <select>(end:</select>) is used to specify a selection. inside this tage we can use <option>(end:</option>) tag. top option is always default.
+--> <iframe>(end:</frame>) is used to create an object where we can use another website.
+--> <video>(end:</video>) is used to show videos on our website.
+      )-> controls it has an attribute controls which allow user to show play/pause button.
+      )-> autoplay
+      )-> loop
+--> <meta> tag is used to specify properties of a website. should be inside <head>.
+--> <address>(end: </address>) is used to specify contact info of author.
+--> <b>(end:</b>) is used to bring attention of reader to a particular term.
+--> <del>(end:</del>) is used to show something in scratch.
+--> <ins>(end:</ins>) is used to show something instead after <del>.
+--> <details>(end:</details>) used to show something in a down popout format.
+--> <dfn>(end:</dfn>) used to show a term which we are defining in that paragraph.
+--> <dl>(end:</dl>) used to show a list of diff description.
+--> <dt>(end:</dt>) in <dl> its used to show a description term.
+--> <dd>(end:</dd>) in <dl> its used to show a description after <dt>.
+--> <kbd>(end:</kbd.) is used to show keyboard keys or highlighted text.
+
+
+
+

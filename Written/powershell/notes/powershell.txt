@@ -1,0 +1,198 @@
+::::::::::::::::::::::::::::::::::::::::::::::::::::< Powershell >:::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+------------------------------< Some common commands >----------------------------------------------
+
+-> dir(cmd): shows all files & directories inside current directory.
+-> ls: shows all files & directories inside current directory.
+-> Get-Commands: it will show all commands of powershell.
+[-parameters]: -<columnname> <value>: it will show all rows with <value> in <columnname>.
+               -Verb <prefix>: it will show all rows which contains the prefix.
+               -Noun <suffix>: it will show all rows which contains the suffix.
+-> Get-Help <command>: it will print help message for the command.
+[-parameters]: -Name <keyword>: it used to search all possible output including that keyword.
+-> Update-Help: system will start reading your help doc & analyzing online references & Update your Help docs.
+-> Get-Variable: used to show all variables names with values in a table.
+-> *: it represents some unknows characters. can be placed before after between keyword to create a format. exi*, *xit, e*t.
+-> Get-Member: is a cmdlet which used to show all methods & properties of a object.
+[-parameters]: -InputObject <var>: it works like this.
+-> Get-Service: is used to get list of running services in current system in tabular format.
+-> we can send output of one command to another directly as an input by pipeline(|). it works like this: <command1>|<command2>
+-> get-modules: is a command to get all available modules.
+-> powershell is a non-case sensetive language.
+
+------------------------------< Basics >---------------------------------------------------------
+
+.............................{ Variables }................................
+
+            _________ Common methods & Properties ___________
+> Variables have a function GetType() which used to get var type in table format, Your can use ".Name" to get datatype name only.
+> String has a property ".Length" to shows length.
+                      _________ Note __________
+> Variables in powershell starts with a "$" dollar sign.
+> Variables in powershell are of two types: Userdefined, Automatic.
+> we can also create variables of a datatype using $<name> = [<ObjectType>]<value>
+> Predefined variables:
+  - $null: nothing.
+  - $LASTEXITCODE: it a starnge variable which contain exitcode of a webside you recently pinged. if 0 means successfull & if 1 means failed.
+> Datatypes:
+  - String: use as usual.
+  - Bool: used by using two words, $true & $false.
+  - Int: used as usual.
+  - Double(float): used as usual.
+> DataStructures:
+  - Hashtable: used in this format @( <key(without queries)> = <val> <key(without queries)> = <val>)
+  - Array: used in this format @{<val>,<val>}
+
+                              __________ String _________
+> we can use string format by using $ inside a string. like:
+          ______________________________
+{syntax}: |$me = "Amrut"               |
+          |echo "Happy Birthday to $me"|
+          |____________________________|
+          ._______________________.
+{Output}: |Happy Birthday to Amrut|
+          |_______________________|
+                              __________ Array __________
+> we can define an array in this format: @(<val>,<val>).
+> "@" used to define an array.
+> you can slice an array by ".." sign. like $array[1..9]. index 1 to 9.
+
+                              __________ Hashtable _______
+> we can use it as a dict in pyhton.
+> .ContainKey("<key>") is a function used to check whether a key exist in or not.
+> .Remove("<key>") is a function used to remove a key & its value.
+          ____________________________
+{syntax}: |$greedings = @{           |
+          | hello = "Hello"          |
+          | hi = "Hi"                |
+          |}                         |
+          |__________________________|
+> we can read a particular element from hashtable in two ways:
+  - $hashtablename["<key>"]
+  - $hashtablename.<key>
+> adding elements in hash table:
+  - $hashtablename.add("<key>",<value>)
+
+                            ____________ Custom Object ___________
+> For creating a new custom object you simply need to use a cmdlet New-Object with a parameter -TypeName.
+> all custom object his instance of PSCustomObject object.
+          __________________________________________________________
+{syntax}: | $instance = New-Object -TypeName PSCustomObject <value>|
+          |________________________________________________________|
+
+................................{ Control Flow }.......................................
+
+                      ___________ Operators ___________
+> -eq: equal than.
+> -ne: not equal than.
+> -gt: greater than.
+> -ge: greater than or equal to.
+> -lt: less than.
+> -le: less than or equal to.
+> -contain: in, helpful for arrays.
+
+................................{ Loops }............................................
+
+                    ______________ Foreach loop _____________
+> it a loop for each element in a array.
+          ___________________________________________
+{syntax}: |foreach (currentobj(eg. i) in $<array>){ |
+          |    # Code #                             |
+          |}                                        |
+          |_________________________________________|
+
+                    ______________ Foreach Object ____________
+> it will perform the same, But for the objects in a array.
+> "$_" is used as a current iteration object.
+         ___________________________________________
+{syntax} |foreach -InputObject $<array> -process { |
+         |      # Code #                           |
+         |}                                        |
+         |_________________________________________|
+
+                    __________________ For loop _______________
+> it used to iterate a number of times.
+          ________________________________________________________________________________
+{syntax}: |for (<before starting statement>, <condition>, <after done each iteration>) { |
+          |                # Code #                                                      |
+          |}                                                                             |
+          |______________________________________________________________________________|
+
+                   __________________ While loop ______________
+> it will iterate until a condition is satisfied.
+          _______________________
+{syntax}: |while (<condition>){ |
+          |    # Code #         |
+          |}                    |
+          |_____________________|
+    
+              ________________ do while loop ______________
+> it will do untill a condition is satisfied & execute some more code before starting the loop.
+          _________________________
+{syntax}: |do{                    |
+          | # Initial Code #      |
+          |} while (<Condition>) {|
+          | # Code #              |
+          |}                      |
+          |_______________________|
+
+                 ________________ do until loop ______________
+> does something a condition is not satisfied.
+          _____________________
+{syntax}: |do{                |
+          | # Code #          |
+          |}until(<condition>)|
+          |___________________|
+
+.............................................{ Error Handling }.............................................
+
+                __________________ by Try/Catch/Finally __________________
+> its same as in python.
+> exception object should be printed in $_.
+> this how we can find the error message: $_.exception.message
+          ____________________________________________
+{syntax}: |try{                                      |
+          |     # code with error #                  |
+          |} catch{                                  |
+          |     # code if got an error #             |
+          |} finally{                                |
+          |     # code after executing catch or try #|
+          |}                                         |
+          |__________________________________________|
+
+.............................................{ functions }...................................................
+
+> these are different from cmdlets, these are written in pure powershell.
+          ________________
+{syntax}: |function foo{ |
+          |   # Code #   |
+          |}             |
+          |______________|
+> if you have to add a parameter then you can define param() inside a function.
+> inside param block you have to include a block parameter which used to set some parameter inputing settings like mandatory=($true/$false)-
+-valuefrompipeline=($true/$false).
+> value from the pipeline used to get input from the pipeline.
+> [cmdletbinding()] is a block which makes it operational like cmdlets.
+          _____________________________________
+{syntax}: |function foo{                      |
+          | [cmdletbinding()]                 |
+          |   param( [parameter(              |
+          |    mandatory=$true/$false         |
+          |    valuefrompipeline=$true/$false]|
+          |    [validset(<validval>)]         |
+          |  [datatype] $<varname>,           |       
+          |  [datatype] $<varname>            |
+          |    )                              |
+          |}                                  |
+          |___________________________________|
+> we can add a "process{}" block to mention code inside it.
+
+..................................................{ Modules }.................................................
+
+                            ____________ import modules ____________
+> "import-module" is a cmdlet used to import modules. It has a parameter -Name which allow to mention module name.
+          ______________________________
+{syntax}: | import-module -Name <name> |
+          |____________________________|
+> module can be stored with file extension ".psm1".

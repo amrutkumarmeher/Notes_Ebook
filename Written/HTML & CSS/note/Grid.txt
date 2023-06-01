@@ -1,0 +1,87 @@
+.................................................[< Grid >].........................................
+
+
+-> how to enable?
+{syn}: .parentcontainer{
+           display: grid;
+           }
+
+/////////////////////////////////////////////[<- Parent ->]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+-> grid-column-gap property:
+adjusts space between columns.
+{syn}: .parentcontainer{
+             grid-column-gap: <value>;
+              }
+-> grid-row-gap property:
+adjust spaces between rows.
+{syn}: .parentcontainer{
+             grid-row-gap: <value>;
+              }
+-> grid-template-columns property:
+it used to define number of columns along with their sizes. As many values(width) we give that many columns will create.
+{syn}: .parentcontainer{
+             grid-template-columns: <value1/auto> <value2/auto> <value3/auto>;
+              }
+-> grid-template-rows property:
+it used to define number of rows along with their sizes. As many values(width) we give that many rows will create.
+{syn}: .parentcontainer{
+             grid-template-rows: <value1/auto> <value2/auto> <value3/auto>;
+              }
+-> grid-grap property:
+it shorthand property of columns and rows.
+{syn}: .parentcontainer{
+             grid-gap: <cgap> <rgap>;
+              }
+if {syn}: .parentcontainer{
+             grid-gap: <singlevalue>;
+              }
+it will set same for the both.
+
+-> justify-content property:
+it will arrange the content accordingly horizantally.
+{syn}: .parentcontainer{
+             justify-content: <baseline/centre/start/end/firstline/left/right/etc.>;
+              }
+-> arign-content property:
+it will arrange the content accordingly vertically.
+{syn}: .parentcontent{
+             align-content: <value>;
+              }
+
+/////////////////////////////////////////////[<- items ->]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+-> grid-column property:
+it will explain upto how many lines(columns) it expands. first value it of its starting line & sec of its end point.
+{syn}: .child{
+             grid-column: <numofline>(start) / <numofline>(end);
+             }
+
+[tips]: if we use "span" keyword before end value it will expland it & take place of values you gave. & starts from start val.
+
+-> grid-row property:
+it will explain upto how many lines(rows) it expands. first value it of its starting line & sec of its end point.
+{syn}: .child{
+             grid-row: <numofline>(start) / <numofline>(end);
+             }
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\[<- Media Queries ->]////////////////////////////////////
+
+these are conditinons when the property will be executed by the browser.
+
+it has four conditins:
+  +> min-width
+  -> max-width
+  +> min-height
+  -> max-height
+
+{syntax}: @media screen and (<condition>: <value>){
+                 *properties...
+              }
+
+
+          
+
+
+
+

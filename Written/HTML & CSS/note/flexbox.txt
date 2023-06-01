@@ -1,0 +1,63 @@
+
+[FLOATPROPERTY]:
+-> it a property which tells browser where to align the object. It can be left/right.
+{syn}: .objclass{
+            float:[right/left];
+                }
+[CLEARPROPERTY]:
+-> it is used to tell the browser not to put any other floating element just side of the object.
+{syn}: .objclass{
+            clear:[left/right/both];
+                }
+
+................................................[< FLEXBOX >].....................................................
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\[<- Parent Container's Properties ->]///////////////////////////////////////
+
+-> how to enable?
+{syn}: .parentcontainer{
+               display:flex;
+                 }
+-> flex-direction property: tells which one is the main direction.
+{syn}: .parentcontainer{
+            flex-direction:[row/row-reverse/column/column-reverse];
+                 }
+-> flex-wrap property: tells how to wrap elements.
+{syn}: .parentcontainer{
+            flex-wrap:[wrap/nowrap/wrap-reverse];
+                 }
+-> justify-content property: tell from which direction elements should align and how, it always chose main direction of parent obj.
+{syn}: .parentcontainer{
+           justify-content:[left/right/centre/baseline/etc.];
+                 }
+-> align-items property: tells browser how to align items vertically.
+{syn}: .parentconatiner{
+             align-items:[baseline/centre/end/etc];
+                 }
+-> align-content property: align all items according to values given, just like *justify-content* but without leaving spaces in between.
+{syn}: .parentcontainer{
+             align-container:[left/right/centre/baseline/etc.];
+                 }
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\[<- Child Container's Properties->]//////////////////////////////////////// 
+
+-> order property: simular to z-index, the only diff is zindex is for positioning & it for positioning in main axis.
+{syn}: .childcon{
+             order: <int>;
+                 }
+-> align-self: it align a particular item.
+{syn}: .childcon{
+             align-slef: [pos];
+                 }
+-> flex-grow: it a property which specify how many times we have to increase the size of the object compared to a normal obj.
+{syn}: .childcon{
+             flex-grow: <int>;
+                 }
+-> flex-shrink: it a property which specify how many times we have to decrease the size of the object compared to a normal obj.
+{syn}: .childcon{
+             flex-shrink: <int>;
+                 }
+
+
+
+

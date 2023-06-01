@@ -1,0 +1,24 @@
+......................................[<- Transition ->].............................................
+
+This property used to change values of properties of elements.
+?=> transition-property: property which has to be changed.
+{syn}: .obj{
+      transition-property: <width/height/color/bg-color/etc.>;
+      }
+
+?=> transition-duration: how much time it will take.
+{syn}: .obj{
+      transition-duration: <num>s/<num>ms;
+      }
+
+?=> transition-time-function: how it should be transited.
+{syn}: .obj{
+      transition-timeing-function: <ease-in/ease-out/ease-in-out/step-end/step-start>;
+      }
+
+?=> transition-delay: specify the delay before transition starts.
+{syn}: .obj{
+      transition-delay: <num>s/<num>ms;
+      }
+
+?=> transition: shorthand of all.

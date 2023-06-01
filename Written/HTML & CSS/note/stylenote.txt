@@ -1,0 +1,4 @@
+--> img {} used to specify properties of images of the web page.
+--> img {width:<num>px} used to specify size of our image.
+--> img {float: left} put the image left of text.
+--> img {marrgin-right:<num>px} 

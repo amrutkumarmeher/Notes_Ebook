@@ -1,0 +1,4 @@
+-> C++ is a very small language for using I/O. It doesn't has any I/O function.  We have to include a liberaries to get I/O functionality.
+-> Few of the popular I/O liberaries are iosteam & osteam. It gives functionality to input and output data.
+-> For input we have cin(iosteam) which helps to input things.
+-> For output we have 3 functions: cout,cerr,clog.
