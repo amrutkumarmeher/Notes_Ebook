@@ -1,0 +1,41 @@
+:::::::::::::::::::: Variables ::::::::::::::::::::::::
+
+format:
+<datatype> <name> = <value>;
+
+datatypes:
+_________________________________
+| DataTypes    |  memory(bytes) | 
+|______________|________________|
+|   byte       |       1        |
+|   short      |       2        |
+|   int        |       4        |
+|    long      |       8        |
+|    float     |       4        |
+|    double    |       8        |
+|   char       |       2        |
+|   bool       |       1        |
+|   string     |   2 * length   |
+|______________|________________|
+
+literats:
+> long: <number>(L/l)
+> float: <number>(F/f)
+
+:::::::::::::::::::::::: Arrays ::::::::::::::::::::::::
+
+format:
+<itemDatatype>[] <name> = [<val>,<val>]
+in case of 2d arrays:
+<itemDataType>[][] <name> = [[<val>,<val>],[<val>,<val>]]
+
+:::::::::::::::::::::: Casting :::::::::::::::::::::::::
+> Implicit casting: small capacity to big.
+> Explicit casting: big capacity to small.
+ex: (<datatype>) <variable>
+
+:::::::::::::::::::::: Constant ::::::::::::::::::::::::
+> 'final' keyword is the key to create constants in java.
+ex: final <datatype> <name> = <value>;
+
+
