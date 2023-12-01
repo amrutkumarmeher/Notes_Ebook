@@ -1,0 +1,231 @@
+                   [ C Programming Notes]
+
+_____________________{ Variables }______________________
+
+____ Naming rules:
+-> Variables are case sensitive.
+-> 1st character should be alphabet or '_'.
+-> no comma/blank space.
+-> No other symbol other than '_'.
+
+____ DataTypes:
+____________________________________________________
+| Data Types                      |   size          |
+|---------------------------------|-----------------|
+| Char or signed char             | 1               |
+| Unsigned Char                   | 1               |
+| Int or signed int               | 2               |
+| Unsigned in(in)                 | 2               |
+|Short or Unsigned short int      | 2               |
+| Signed short int                | 2               |
+|Long int or Signed long int      | 4               |
+|  Unsigned long int              | 4               |
+|   float                         | 4               |
+|   double                        | 8               |
+|   Long Double                   | 10              |
+|_________________________________|_________________|
+
+
+____ Constants:
+
+> Types of constants:
+-> Inter Constants(1,2,3,0,-1,-2).
+-> Real Constants(1.0,2.0,3.14,-2.4).
+-> Character Constants('a','b','A','#','&').
+
+_____________________{ Comments }______________________
+___________________________
+| Single Line |    //     |
+| Multi Line  |   /*      |
+|             |   */      |
+|_____________|___________|
+
+
+_____________________{ I/O }______________________
+
+____ Output - printf() function:
+
+-> printf("age is %d",<doublevar>)
+-> printf("value of pi is %f",<floatingvar>)
+-> printf("star looks like this %c",<charvar>)
+
+____ Input - scanf() function:
+
+-> scanf("<inputType>",&<variableToStore>")
+
+|note|: "&" is the address of the variable.
+|note|: "*" is used to referr the value of the address.
+
+_____________________{ Instructions/Statements }______________________
+
+> Types:
+-> Type Declaration Instructions
+-> Arithmetic Instructions
+-> Control Instructions
+
+____ Control Instructions:
+-> (a). Sequence Control
+-> (b). Decision Control(is,else)
+-> (c). Loop Control
+-> (d). Case Control
+
+
+_____________________{ Switch }______________________
+
+> Its like if-else condition but instead of a statment in every condition, it will have a var name-
+mentioned & cases with value, if any value is same then it will execute given instructions or if-
+none of them are correct then it will execute default.
+
+|note|: if it found one statement correct it will execute rest of that below so we must use break statement-
+after instructions.
+|note|: nested switches are not allowed.
+
+_____________________{ Loops }______________________
+
+_____ Types of loop:
+-> while loop
+-> for loop
+-> do while loop
+
+_____ for loop:
+
+} for(<init>,<condition>,<update>){}
+
+_____ while loop:
+
+} while(<condition>){}
+
+_____ do while loop:
+> its a loop which will at least one time.
+
+} do{instructions}while(<condition>);
+
+_____________________{ Function }______________________
+
+____ prototype:
+> returnDataType> <functionName>(<ParameterDatatype> <ParameterNmae>){<Instructions>};
+
+____ getchar():
+> it will return ascii decimal of that character.
+
+____ putchar():
+> it will return character of that decimal.
+
+_____________________{ Strings }______________________
+
+> we need to add a '\0' null character at the last position in a character array to make it a string.
+} char name[] = {'A','M','R','U','T','\0'}
+|note|: there is a character specifier in C for string in printf() which is "\s".
+|note|: we don't need to give string address while using its format specifier in printf();
+
+____ input in string:
+
+> we need to use three function to get inputs: gets(),fgets() & puts().
+
+____ gets(<str>):
+> use to get single words & cat input spaces.
+
+____ fgets(<str>,<length+1>,<file/stdin>):
+
+> stdin is a function used to take input from user, it tells the function to get input directly from the user.
+> file is used to take input from an existing file.
+
+____ puts(<str>):
+> output a string
+
+_____________________{ Arrow Operator }______________________
+
+> a format used to access child of a variable whose add we have.
+   
+      (*pointer).child() is equivalent to pointer->child()
+
+_____________________{ Alias }______________________
+
+____ typedef:
+> used to create an alias for a particular type.
+
+code:
+____________________________________________________________
+|                                                          |
+| typedef <typeName> <newAlias>;                           |
+|__________________________________________________________|
+
+____ #define
+> we can use this key word to define some values like:
+_____________________________________
+| //  #define <name> <value>        |
+| #define cool_no 100;              |
+| int number = cool_no;             |
+|___________________________________|
+
+
+_____________________{ File I/O }______________________
+
+> there is a hidden Data Type in C, named FILE which is different in each operating system.
+> we can't modify FILE data type in C.
+> file modes are same as Python file modes.
+> if file pointer is null them file doesn't exist.
+> when we are using FILE DataType we need to create a pointer as:
+_______________________________________
+|  FILE *FPointer;                    |
+|  char var;                          |
+|  FPointer = fopen(<path>,mode);     |
+|  fscanf(FPointer,"%c",&var);        |
+|  fclose(FPointer);                  |
+|_____________________________________|
+
+> fscand used for reading files.
+> fprintf used for writing files.
+> there are two more features fgetc() which used to get input from file & fputc() which outputs in a file.
+
+_____________________{ Dynamic Memory Allocation }______________________
+
+____ Function of DMA:
+-> malloc(): memory allocation
+-> calloc(): continuous allocation
+-> free()
+-> realloc(): re-allocation
+
+____ malloc():
+> its a function which allocate memory during runtime.
+> we need to tell it how much memory we need in bytes.
+> it will create void type memory by default & we have to cast it in order to use it.
+> code:
+_______________________________________
+| int *ptr;                           |
+| ptr = (<datatype>*) malloc(<bytes>);|
+|_____________________________________|
+
+____ calloc():
+> its a function which allocate memory during runtime in form of continuous units.
+> we can define how many units we need & size of each unit.
+> we also need to cast it in desired datatype.
+>code:
+___________________________________________________________
+| int *ptr;                                               |
+| ptr = (<datatype>*) calloc(<units>,<sizeof each unit>)  |
+|_________________________________________________________|
+
+_____ free():
+> free() is a function which frees up the memory allocated by calloc() or malloc().
+> code:
+________________________
+|  free(<ptr>)           |
+|______________________|
+
+_____ realloc():
+> re-allocate memory of a pointer.
+> code:
+____________________________
+| realloc(<ptr>,<newSide>) |
+|__________________________|
+
+
+
+
+
+
+
+
+
+
