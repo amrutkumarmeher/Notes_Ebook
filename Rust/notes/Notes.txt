@@ -1,0 +1,38 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> [ RUST NOTES ] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+............ { Declaration }...........
+
+let mut(optional) <identifier> : <type>(optional) = <value>;
+
+............ { DataTypes }.............
+-> Primitive Datatypes
+- int, char, bool, float
+
+_ Integer(int):
+  -> signed:   i8, i16, i32, i64, i128
+  -> unsigned: u8, u16, u32, u64, u128
+_ float(float):
+  -> f32 & f64
+_ Boolean(bool):
+  -> bool(true or false)
+_ character(char):
+  -> char(single Unicode character value, eg '\u{30}'.
+
+-> Non-Primitive Datatype
+- array, tuple, slice, string, slice string.
+
+_ array
+ -> declaration: let <identifier>: [<datatype>, <arrsize>] = [<value>,<value>...];
+_ string(String)
+ -> collection of character & owns them.
+ -> we can make a slice string from a string:  &<string var>[<strting index>..<last index>]
+_ slices string(&str)
+ -> Immutable
+
+_ tuple
+ -> collection of elements(different data type).
+ -> declaration: let <identifier>
+
+
+
+
