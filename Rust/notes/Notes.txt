@@ -3,6 +3,9 @@
 ............ { Declaration }...........
 
 let mut(optional) <identifier> : <type>(optional) = <value>;
+for global variables we have two keywords:
+const: used for constants at compile time, inlined & not fined memory location.
+static: used for mutable or immutable at runtime, fixed memory location.
 
 ............ { DataTypes }.............
 -> Primitive Datatypes
@@ -32,6 +35,49 @@ _ slices string(&str)
 _ tuple
  -> collection of elements(different data type).
  -> declaration: let <identifier>
+
+............ { Functions }.............
+
+- declared with fn keyword.
+- function name should be in snake case with only lower case letters.
+- function can be above or below main() function.
+
+ _ syntax:
+   fn <name_in_snake_case>( <arg>: <type>){
+      // code inside
+     }
+- it will return output of last expression when we close a code block(brances).
+- last line of code doesn't need any brances.
+Eg: fn main(){
+     line1;
+     linelast
+     }
+- whatever linelast return gonna be return value of main func too.
+- alternative of it is using 'return' statement.
+- the println! macro can be formated in this way: "{<digits before dot>.<digits after dots>}"
+
+Expression: sentence that returns a value.
+Eg. 5 // returns 5
+    true // returns true
+    add(1,2) // returns int 3
+    if(con){value1} else{value2}
+
+Statement:  sentence that doesn't returns a value.
+ - its something that can't be assigned to a variable.
+ - its something that doesn't return values.
+ - Eg:
+   -> declaration of variable is a statment.
+   -> function definition.
+   -> control statement.
+
+............ { Ownership & Borrowing }.............
+- Ownership: every value has one owner, some of the variables own its value.
+  - Whenever the owner goes out of scope, its value will be dropped.
+  - whenever you use reference to a value existed in memory, we use '&' sign in from of the var.
+  - we can use this sign to borrow a value from its owner.
+
+
+
 
 
 
