@@ -1,13 +1,19 @@
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> [ RUST NOTES ] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+............ { Comment }...........
+-> Single line:
+  -e.g.  // This is a comment
+-> Multi-line:
+  -e.g. /**/
+
 ............ { Declaration }...........
 
 let mut(optional) <identifier> : <type>(optional) = <value>;
 for global variables we have two keywords:
-const: used for constants at compile time, inlined & not fined memory location.
+const: used for constants at compile time, in lined & not fined memory location.
 static: used for mutable or immutable at runtime, fixed memory location.
 
-............ { DataTypes }.............
+............ { Datatypes }.............
 -> Primitive Datatypes
 - int, char, bool, float
 
@@ -19,7 +25,7 @@ _ float(float):
 _ Boolean(bool):
   -> bool(true or false)
 _ character(char):
-  -> char(single Unicode character value, eg '\u{30}'.
+  -> char(single Unicode character value, e.g. '\u{30}'.
 
 -> Non-Primitive Datatype
 - array, tuple, slice, string, slice string.
@@ -28,7 +34,7 @@ _ array
  -> declaration: let <identifier>: [<datatype>, <arrsize>] = [<value>,<value>...];
 _ string(String)
  -> collection of character & owns them.
- -> we can make a slice string from a string:  &<string var>[<strting index>..<last index>]
+ -> we can make a slice string from a string:  &<string var>[<string index>..<last index>]
 _ slices string(&str)
  -> Immutable
 
@@ -43,38 +49,132 @@ _ tuple
 - function can be above or below main() function.
 
  _ syntax:
-   fn <name_in_snake_case>( <arg>: <type>){
-      // code inside
-     }
-- it will return output of last expression when we close a code block(brances).
-- last line of code doesn't need any brances.
-Eg: fn main(){
-     line1;
-     linelast
-     }
-- whatever linelast return gonna be return value of main func too.
+_____________________________________________
+|   fn <name_in_snake_case>( <arg>: <type>){|
+|      // code inside                       |
+|     }                                     |
+|___________________________________________|
+- it will return output of last expression when we close a code block(braces).
+- last line of code doesn't need any braces.
+E.g.: 
+________________
+| fn main(){   |
+|     line1;   |
+|     line last|
+|  }           |
+|______________|
+
+- whatever line last return gonna be return value of main funs too.
 - alternative of it is using 'return' statement.
-- the println! macro can be formated in this way: "{<digits before dot>.<digits after dots>}"
+- the println! macro can be formatted in this way: "{<digits before dot>.<digits after dots>}"
 
 Expression: sentence that returns a value.
-Eg. 5 // returns 5
-    true // returns true
-    add(1,2) // returns int 3
-    if(con){value1} else{value2}
+E.g.. 
+__________________________________
+|    5 // returns 5              |
+|    true // returns true        |
+|    add(1,2) // returns int 3   |
+|    if(con){value1} else{value2}|
+|________________________________|
 
 Statement:  sentence that doesn't returns a value.
  - its something that can't be assigned to a variable.
  - its something that doesn't return values.
- - Eg:
-   -> declaration of variable is a statment.
+ - E.g.:
+   -> declaration of variable is a statement.
    -> function definition.
    -> control statement.
 
 ............ { Ownership & Borrowing }.............
 - Ownership: every value has one owner, some of the variables own its value.
   - Whenever the owner goes out of scope, its value will be dropped.
-  - whenever you use reference to a value existed in memory, we use '&' sign in from of the var.
+- Reference: Its like pointer in C, its a reference to an existing value in memory & borrowing its.
+  - Borrowing is of two types: mutable(borrow with modification) & immutable(only use).
+  - whenever you use reference to a value existed in memory, we use '&' sign in front of the var.
   - we can use this sign to borrow a value from its owner.
+  - whenever are modifying the reference value(mutable), we use '*' sign in front of the var.
+  - You can have one mutable reference or many immutable references.
+
+
+............ { Data Structure }.............
+->  STRUCT
+syntax:
+____________________________________________
+| struct <name>{                           |
+|    <var1>:<datatype>,                    |
+|    <var2>:<datatype>                     |
+| }                                        |
+| impl <name>{                             |
+|   fn <fn_name>(self,<args:datatypes>){}  |
+|  }                                       |
+|                                          |
+| // declaring                             |
+| fn main(){                               |
+|  let i : struct = <name>{                |
+|   <var1>:<val1>,                         |
+|   <var2>:<val2>                          |
+|  }                                       |
+|  i.<fn_name>()                           |
+| }                                        |
+|__________________________________________|
+
+............ { Constants }.............
+
+-> Difference between constant & immutable:
+  - in constants you are not allowed to use the keyword 'mut' with 'const'.
+  - when declaring a constant, it should be in capital letter.
+  - while declaring a constant, the datatype must be specified.
+  - constant can be declared anywhere, in global scope(outside of main function).
+
+............ { Shadowing }.............
+
+-> Shadowing is a technic same as overwriting in other languages.
+-> It allows an existing variable to redeclared in a particular scope, allowing a particular value for a block..
+-> It will retain its old value if the shadowed(second, or more) got out of scope.
+-> we can do shadowing with different types of data.
+e.g.:
+_____________________________________________________________________
+|                                                                   |
+|    let shadowed_binding = 1;                                      |
+|    {                                                              |
+|        println!("before being shadowed: {}", shadowed_binding);   |
+|        // This binding *shadows* the outer one                    |
+|        let shadowed_binding = "abc";                              |
+|        println!("shadowed in inner block: {}", shadowed_binding); |
+|    }                                                              |
+|    println!("outside inner block: {}", shadowed_binding);         |
+|    // This binding *shadows* the previous binding                 |
+|    let shadowed_binding = 2;                                      |
+|    println!("shadowed in outer block: {}", shadowed_binding);     |
+|___________________________________________________________________|
+
+............ { If-Else Condition }...........
+
+Syntax:
+___________________________
+| if <condition> {        |
+|  // code                |
+| } else if <condition> { |
+|  // code                |
+| } else {                |
+|  // code                |
+| }                       |
+|_________________________|
+
+............ { Loops & Repetation }...........
+
+Types of loop:
+-> loop:
+   - repeat util got hit by break statement.
+ ___________________________
+ | loop{                   |
+ |  // code                |
+ |  if <condition>{        |
+ |    break                |
+ |  }                      |
+ | }                       |
+ |_________________________|
+
 
 
 
