@@ -98,7 +98,20 @@ Statement:  sentence that doesn't returns a value.
 
 ............ { Data Structure }.............
 ->  STRUCT
-syntax:
+   - it has fields with data types.
+   - you can create an instance of a struct.
+   - in this case 'i' is the instance.
+   - the entire struct object must be mutable in order to modify it at runtime.
+   - its an object means we can use to process values & use its objects as return values.
+   - we can create an instance with the help of another by copying. Syntax:
+    ____________________________
+    |  let user2 = user{       |
+    |    email: "some@m.com";  |
+    |    ..user1               |
+    |__________________________|
+   - we can copy other field from user1(another instance) to user to except email.
+   - email field set manually.
+   - Syntax:
 ____________________________________________
 | struct <name>{                           |
 |    <var1>:<datatype>,                    |
@@ -117,6 +130,22 @@ ____________________________________________
 |  i.<fn_name>()                           |
 | }                                        |
 |__________________________________________|
+
+-> Tuple Struct
+   - contain only values with no keywords.
+   - Syntax:
+     _____________________________
+     |  struct a(i32, i32, i32); |
+     |  let x = a(1,2,3)         |
+     |___________________________|
+ 
+-> Unit struct or no value struct
+    - doesn't contain any value.
+    - Syntax:
+     _____________________________
+     |   struct a;               |
+     |   let x = a;              |
+     |___________________________|
 
 ............ { Constants }.............
 
@@ -161,20 +190,55 @@ ___________________________
 | }                       |
 |_________________________|
 
-............ { Loops & Repetation }...........
+............ { Loops & Repetition }...........
 
 Types of loop:
 -> loop:
    - repeat util got hit by break statement.
+   - also return values at the end.
+   - values aside of break statement are returned.
  ___________________________
  | loop{                   |
  |  // code                |
  |  if <condition>{        |
- |    break                |
+ |    break 1;             |
  |  }                      |
  | }                       |
  |_________________________|
 
+    -> LABELS:
+       - in case of nested loops, label can be used to label the code block.
+       - these are useful to break the nested loop suddenly & came out of a level nested loop with break & label.
+       - labels are created by ' & set like: '<label name>: <loops>;
+       - Syntax:
+        ___________________________________________
+        | 'label1: loop{                          |
+        |   'label2:loop{                         |
+        |      // inside nested loop              |
+        |      break 'label1;                     |
+        |      print!("This will never reached"); |
+        |    }                                    |
+        |  }                                      |
+        |_________________________________________|
+
+       - in this case, when it breaks 'label1, it will suddenly break first loop & stop second loop before print statement.
+
+-> while loop:
+   - loop until a condition is met.
+   - Syntax:
+     _________________________________
+     | while <condition> {           |
+     |    // code                    |
+     |  }                            |
+     |_______________________________|
+
+ -> for each:
+   - loop through series or list.
+   - Syntax:
+     ________________________________
+     |  for i in array{             |
+     |    // code                   |
+     |______________________________|
 
 
 
