@@ -85,6 +85,13 @@ Statement:  sentence that doesn't returns a value.
    -> function definition.
    -> control statement.
 
+............ { Control Flow }.............
+
+-> If-else:
+   - use the keyword if, else, if else to control with help of expressions.
+-> match <var>:
+   - just like switch in other languages, it recognise patters & execute instructions if any of these matched.
+
 ............ { Ownership & Borrowing }.............
 - Ownership: every value has one owner, some of the variables own its value.
   - Whenever the owner goes out of scope, its value will be dropped.
@@ -146,6 +153,28 @@ ____________________________________________
      |   struct a;               |
      |   let x = a;              |
      |___________________________|
+
+-> Enum
+   - contain different variants of its type during declaration.
+   - only one variant can be used in an object at a time.
+   - Only one type of data can be stored at a time which is variant value.
+   - it can be used to pass choices to functions, its type identified as Enum name.
+   - Syntax:
+     __________________________________
+     | enum aenum{                    |
+     |    varient1,varient2           |
+     | }                              |
+     | let x:aenum = aenum::varient1; |
+     |________________________________|
+   - If we wanna store data, Syntax:
+     ________________________________________
+     | Enum aenum {                         |
+     |   varient1(<datatype>),              |
+     |   varient2(<datatype>,<datatype)     |
+     | }                                    |
+     | let x:aenum = aenum::varient1(<val>);|
+     |______________________________________|
+   
 
 ............ { Constants }.............
 
@@ -240,9 +269,110 @@ Types of loop:
      |    // code                   |
      |______________________________|
 
+............ { Error & Exception handling }...........
+
+-> Approach 1(Option<T>):
+   - Option<...> is an Enum which stores two variants, value(some(...)) or None.
+   - It can be used in case of error, it can process valueless variable.
+   - It can be return type of a function, in case it didn't provide any value.
+   - In this Enum, there are two variants: some(<val>) & None. 
+   - defining an Enum to set return type is a clever way, & putting none as a variant.
+   - Syntax:
+     _______________________________________
+     | fn div(a:i32, b:i32)->Option<i32>{  |
+     |   if b == 0{None}                   |
+     |   else { some(a/b)}                 |
+     | }                                   |
+     |_____________________________________|
+
+-> Approach 2(Result<T,E>):
+   - just like option Enum, its also an Enum with two variants: Ok(...) & Err(...).
+   - it will create obj of Ok variant if everything is ok else of Err.
+   - we can get <val> from Ok(<val>) by .unwrap() function.
+     ____________________________________________
+     | fn div(a:i32, b:i32)->Result<i32,&str>{  |
+     |   if b == 0{Err("Cant div")}             |
+     |   else {Ok(a/b)}                         |
+     | }                                        |
+     |__________________________________________|
+
+............ { Macro }...........
+
+   - Its a type of function that input some code & output some code.
+   - Its part of metaprogramming.
+   - All the procedure & changes happen during AST(ASynatx Tree) during compilation of code.
+-> Declarative macro:
+   - similar to rust match expression, matches the pattern & execute code based on it.
+   - Declaration Syntax:
+   ______________________________________________________
+   | macro_rules! amacro{                               |
+   |   () => {}; // if nothing got. do everything in {} |
+   |   (<some pattern>) => {<do something>}             |
+   | }                                                  |
+   |____________________________________________________|
+    
+   - <some pattern> can be an arbitrary var to specify input code or patterns.
+   - its name started with $ like $someval: <type>, <type> specify type of code & pattern.
+   - its type can be:
+   __________________________________________________________________
+   |         Keyword          |                used for             |
+   |--------------------------|-------------------------------------|
+   |          item            |   item like func, struct, module.   |
+   |          block           |        a group of statement.        |
+   |          stmt            |  stands for statementdo action,     |
+   |                          |   doesn't return anything.          |
+   |          pat             | patterns, literals, variables, DS.  |
+   |          expr            | an expression which returns value.  |
+   |          ty              | a type, type or class of an object. |
+   |          ident           |  an identifier or variable name.    |
+   |          path            | reference like func, Enum, struct.  |
+   |__________________________|_____________________________________|
+
+   - If we wanna do repetition in macro input. we can do it by pattern $($<identifier>:<type>),<repetition symbol>.
+   - In this syntax, ',' is separator which is optional.
+   - * repetition symbol is compulsory, its of 3 types based on how much to repeat:
+   ______________________________________________
+   |       Symbol       |         Range         |
+   |--------------------|-----------------------|
+   |         *          |       0 - many        |
+   |         +          |       1 - many        |
+   |         ?          |        0 - 1          |
+   |____________________|_______________________|   
+   - separator can be in between $ to <*/?/+>. its used to denote comma in input.
+   - we can use &(<code>)* to write loop in list like inputs:
+   _______________________________________________________
+   | macro_rules! amacro{                                |
+   |   ($($x:expr),*){                                   |
+   |      $( println!("{}",$x);)*                        |
+   |   }                                                 |
+   | }                                                   |
+   |_____________________________________________________|
+   - note: ',' is a separator of this pattern, think of something like amacro!(1|2|3), the separator will change to '|'.
+   - its only placed to recognise patterns.
+   - In case if first value got taken separately by a different pattern like in recursion, it will place before $x:<t>.
 
 
+............ { Collection Types }...........
 
+-> Vector(Vec<T>):
+   - T here is datatype.
+   - It stores value one after another just like array.
+   - the only difference between vector & array is, vector can change dynamically.
+   - In rust there is a macro vec![<values>] used to initialize a vector.
+
+-> UTF-8 Strings:
+   - to create: String::from("some str") or String::new().
+   - These strings are UTF-8 encoded, means it can represent characters of other languages.
+   - It can store emojis.
+   - In rust, string(one owned with another borrowed) can be added with the sign of +.
+
+-> Hash-Map:
+   - to create a new one: HashMap::new().
+   - to initialize: let mut _a: HashMap<<Key type>,<val type>> = HashMap::new();.
+   - insert: _a.insert(<key>,<val>);.
+   - get: _a.get(<key>);. It will return value associated with that key.
+   - It will return Some(<val).
+   
 
 
 
