@@ -1,0 +1,129 @@
+///////////////////////////////[ Java GUI with Swing]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+...............................{ JFrame }....................................
+
+class JFrame:
+  - its a class used to create window, its object creates a single window.
+  - to make it visible we need to run .setVisible(<true/false>) to true.
+  - we can use .setSize(<width>,<height>) to set a default size. 
+  - we can use .add(<component>) to add anything we want.
+  - .setTitle(<title in string>) used to set title of the windows(frame).
+  - everytime we close the poped frame, it doesn't end's program.
+  - if we want, then we need to frame.setDefaultCloseOperation() to <frame name>.EXIT_ON_CLOSE.
+  - by default this feature is set as <frame name>.HIDE_ON_CLOSE.
+  - there is one more option <frame name>.DO_NOTHING_ON_CLOSE to stop user from closing it.
+  - .setResizable(<false/true>) used to change resizabe status to restrict user from resizing.
+  - .setIconImage(<Image>) use to set icon for window, it take argument in Image class.
+  - .getContentPane().setBackground(Color.<any color>) used to set bg color of the window.
+  - .setLayout(<nul/manager>) used to set layout manager, if its null the borders of components are managed manually.
+  - if size & position of the component is not defined then it not gonna represent it.
+  - .pack() automatically adjust size of the frame based on components, don't need to use .setLayout(null), .setSize() & in label .setBounds().
+class ImageIcon:
+  - used to set image for JFrame. Its constructor need file path & it will create an ImageIcon object.
+  - <obj>.getImage() return Image object.
+class java.awt.color:
+  - used to set color & store color.
+  - has some static variables used as an arguments for some functions.
+  - we can create a new color by `new Color(<r>,<g>,<b>)`.
+  - we can do it for hexadecimal like `new Color(0x<hex>)`.
+
+............................{ JLabel }................................
+
+class JLabel:
+  - its a class used to show images & text on window.
+  - .setText(<text>) can set label object text.
+  - .setImage(<ImageIcon>) used to set images for labels like icons or bullet points.
+  - .setHorizontalTextPosition(<constants>) set text position horizontally in that label block locally, its like <div> in html.
+  - options of Horizontal text are JLabel.LEFT, JLabel.RIGHT & JLabel.CENTER.
+  - .setVerticalTextPosition(<constants>) set text position vertically in that label block locally.
+  - options of vertical text are JLabel.TOP, JLabel.CENTER & JLabel.BOTTOM.
+  - we can use .setVerticalTextPosition() & .setHorizontalTextPosition() simaltaneously to set position of text.
+  - .setForeground(<Color constants>) used to set text color of the label.
+  - .setFont(<Font Name>,<constants>,<size in int>) used to set fonts, constants are: PLAIN,BOLD & ITALIC etc.
+  - .setIconTextGap(<int>) used to set text & icon distance, even its can take negative number.
+  - .setBackground(<color>) used to set color of back ground in label.
+  - .setOpaque(<true/false>) used to set if background color will shown up or not.
+  - .setHorizontalAllignment(<constant>) sets label position in whole window horizontally. constants: LEFT,CENTER & RIGHT.
+  - .setVerticalAllignment(<constant>) sets label position in whole window vertically. constants: TOP, CENTRE & BOTTOM.
+  - .setBorder(<Border>) used to set border of the label.
+  - .setBounds(<x>,<y>,<width>,<height>) used to set position & size of label if <frame>.setLayout() is null.
+class Border:
+  - used to create border & object passed to .setBorder() function.
+class BorderFactory:
+  - return border objects of different types depends on requirements.
+
+............................{ JPanel }................................
+class JPanel:
+  - panels are like subsections or sub division in the frame. its functions same as frame but during display it shows inside frame.
+  - all functions are same for panel as for frame except panel has some allignment functions.
+
+............................{ JButton }................................
+class JButton:
+  - this class used to create a button component.
+  - .addActionListener(<Listener object>) used to do set actions when clicked.
+interface ActionListener:
+  - this interface force class to add a function public void actionPerformed(ActionEven action).
+  - this functions called everytime when the event like click done.
+  - .setFocusable(<true/false>) used to remove an outer line on button text.
+  - .seEnable(<true/false>) will enable or disable a button.
+  - rest of the button functions are same.
+
+............................{ Border Layout }................................
+class BorderLayout:
+  - this class automatically manage layout according to the screen size.
+  - It store some allignemnts like EAST, WEST, NORTH, SOUTH & CENTRE which used when adding a component to frame or panel. other allignments will not work.
+  - its constructor has dimensions like hgap & vgap which allow gaps between components coliding with each other.
+class Dimension:
+  - this class store dimension of an window.
+  - it must passed on .setPreferedSize() function, other functions will not work.
+
+............................{ Flow Layout }................................
+  - if we are using flow layout manager, we must used .setPreferedSize() to set dimensions, without that nothing will work.
+class FlowLayout:
+  - it also used as BorderLayout.
+  - we have to pass its instance in the .setLayout() as a layout manager.
+
+............................{ Grid Layout }................................
+  - it arrange things in rows & columns, each block size is relative to its frame or panel size.
+  - we must pass an instance of GridLayout to .setLayout() function to use it.
+  - its constructor arguments are: rows: no of rows, columns: no of columns, hgap: gap horizontally & vgap: gap vertically.
+
+............................{ JLayeredPane }...............................
+  - its similar to JPanel but it could process 3D z-axis.
+  - there is a name for each layer which we need to pass while adding a component:
+      .DEFAULT_LAYER < .PALETTE_LAYER < .MODAL_LAYER < .POPUP_LAYER < .DRAG_LAYER
+      where default is lowest & drag is highest.
+  - we can use also:
+    ______________________________________________
+    | frame.add(JLP,Integer.valueOf(<0/2/3..>)): |
+    |____________________________________________|
+  
+............................{ Remove Elements from frame }...............................
+  - there are some functions which helps here:
+    .getContentPane() use to return content panel of JFrame.
+    <contentPanel>.remove(<component>) remove a component from frame
+    <contentPanel>.removeAll() remove eveny component from frame
+    <frame>.revalidate() used to reorder the layout.
+    <frame>.repaint() used to reset visuals according to current order.
+
+............................{ Dialog }...............................
+  class JOptionPane:
+    - this class contain function that opens dialog.
+    - .showMessageDialog() used to create a dialog box contain only msg with ok button.
+    - .showOptionDialog() used to create a dialog with some options availabel after msg.
+    - .showConformDialog() is almost same as .showMessageDialog().
+
+............................{ Text fields }...............................
+  class TextField:
+    - its a class used to make text field which later can be access by .getText() method.
+    - we can set input text font & styling as we do with other components.
+    - .setText() can be used to set default text.
+    - .setEditable() can be use to restrict the text of text field from editing.
+
+............................{ CheckBox }...............................
+  class JCheckBox:
+    - its a GUI component which can be selected or deselected.
+    - we can add text in its constructor & Image in second parameter.
+    - we must add an action listener which triggers each time the box clicked.
+    - .isSelected() is a function return boolen if the box is selected/deselected.
+    - .setSelectedIcon() is a function used to set icon when the CheckBox is selected.
