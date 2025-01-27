@@ -1,0 +1,23 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.. NUMPY ..<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+class array(object, datatype): creates an array from given object.
+    .shape: stores shape of the array in tuple, (<rows>,<column>).
+    .dtype: stores datatype.
+    .T: show transpose of the array(same in pandas).
+    .flat: returns a iterable object which returns every element of the array.
+    .ndim: return number of dimensions.
+    .nbytes: return number of bytes.
+    .argmax(<axis>): returns position of max.
+    .argmin(<axis>): returns position of min.
+    .argsort(<axis>): sorts the array.
+    .ravel(): put every element of the array in a single row irrespective of current shape.
+    .reshape(<shape>): reshapes the array into given size.
+    .sum(<axis>): sums elements from a particular axis.
+    .max() return max element.
+    .min() return min element.
+class zeros(shape in tuple): creates an array full of zeros.
+class arrange(int): create an iterable array of given type.
+class linspace(<start>, <end>, <number of elements>, <dtype): provide an array of given integers in ascending order from start to end.
+class empty(<shape>): given an array of random values in given shape.
+class empty_like(array): create an array by taking shape & elements of given array.
+class identity(<row/col> n): create a matrix of size n * n.
