@@ -60,7 +60,7 @@ Here is an example of that...
          |    Stuart   |   17  |    CR005   |
          |_____________|_______|____________|    . . . (Table-3)
 
-in Table-3 primary key is student and age,course depends directly on student.
+in Table-3 primary key is student and age, course depends directly on student.
 
 ***********************************
                 Third Normal Form
