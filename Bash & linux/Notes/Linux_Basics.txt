@@ -1,0 +1,109 @@
+                 ...*** *** Basic Commands *** ***...
+                 
+                 
+                        /// CHAPTER - 1 \\\
+                 
+-> locate <bin/file/word>
+this command will find every occurrence of that word in file system.
+
+-> whereis <bin/command>
+returns binary & source of the binary.
+
+-> which <bin>
+return path of the binary from path variable.
+
+-> find <base_path> -type <type> -name <pattern>
+find every instance of the pattern of the type from base path.
+> available_wild_cards: * ?
+
+-> ps <options>
+show running processes.
+>options:
+ -a: Displays all processes associated with the current terminal, including those that are not attached to a terminal. 
+ -u: Displays information about processes owned by the current user. 
+ -x: Displays all processes, including those not associated with a terminal, but not including processes that are waiting for a terminal. 
+ aux: A commonly used command to display a comprehensive list of processes, including those not associated with a terminal, and provides details like CPU and memory usage. 
+ -ef: Displays all processes in full format, including details like the user ID, command, and start time. 
+
+-> cat
+this command used to create, alter, append & view a file(txt).
+> cat <file> prints content of a file.
+> cat > <file> write to file(delete prev).
+> cat >> <file> append to file.
+
+-> touch <file>
+creates a file.
+
+-> mkdir <name>
+makes directory.
+
+-> cp <old_file_path> <new_file_path>
+copy content of a file to another.
+
+-> mv <old_file_path> <new_file_path>
+move & renames the file.
+
+-> rm <file_path>
+removing file(no trash).
+
+-> rmdir <directory>
+removes directory if empty.
+
+-> rm -r <directory>
+removes directory & its contents.
+
+                              /// CHAPTER - 2 \\\
+
+-> head <file_name>
+shows top 10 lines of a file.
+> -<n>: where n is number, by default its 10.
+
+-> tail <file_name>
+show below 10 lines of a file.
+> -<n>: where n is number, y default its 10.
+
+-> nl <file_name>
+> how serial line numbers with content of a file.
+
+-> grep <option(optional)> <pattern> <file(optional)>
+finds lines with matching patterns in a file or through pipeline.
+> -c: count of matching occurrences.
+> -i: ignore case.
+
+-> more <file>
+lets you see file & scroll it even.
+
+-> less <file>
+lets you see like more but also find patterns while scrolling.
+
+                              /// CHAPTER - 3 \\\
+
+-> ifconfig
+show list of network interfaces & details.
+> ifconfig <interface> <ip_addr> netmask <netmask_code>
+changes network ip address of an interface & also netmask.
+>ifconig <interface> down | ifconfig <interface> ether <address> | ifconfig up
+it changes MAC address.
+here ether means MAC address(aka ethernet address).
+
+-> iwconfig
+show network interfaces with wireless extensions.
+
+-> dhclient <interface>
+request an ip address from network DHCP server & DHCP Daemon.
+
+-> dig <domain> <options>
+show ip address of a domain.
+> A – IPv4 address
+> AAAA – IPv6 address
+> CNAME – Canonical Name (alias)
+> MX – Mail Exchange
+> NS – Name Server
+> PTR – Pointer (reverse DNS lookup)
+> TXT – Text record
+> SOA – Start of Authority
+> SRV – Service record
+
+
+
+
