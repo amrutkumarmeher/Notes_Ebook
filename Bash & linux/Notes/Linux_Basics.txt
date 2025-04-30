@@ -78,6 +78,10 @@ lets you see like more but also find patterns while scrolling.
 
                               /// CHAPTER - 3 \\\
 
+files:
+/etc/resolv.conf - store DNS server address.
+/etc/hosts - stores domains hosts with their ip.
+
 -> ifconfig
 show list of network interfaces & details.
 > ifconfig <interface> <ip_addr> netmask <netmask_code>
@@ -104,6 +108,186 @@ show ip address of a domain.
 > SOA – Start of Authority
 > SRV – Service record
 
+                              /// CHAPTER - 4 \\\
+                            
+files:
+/etc/apt/sources.list - stores repository sources(links).
+
+-> apt-cache
+show informations about existing packages.
+> search <package> - use to search some packages inside linux.
+> depends <package> - shows dependencies of the package.
+> show <package> - shows readable record(info).
+> pkgnames <pkg(optional)> - searches through packages name.
+
+-> apt-get install <package>
+used to install packages
+
+-> apt-get remove <package>
+removes a specific package but keeps configuration.
+
+-> apt-get purge <package>
+removes a specific package with its configuration.
+
+-> apt-get update
+gets latest version required softwares from repo for OS & Other softwares.
+
+-> apt-get upgrade
+gets latest version of the existing installed packages.
+
+-> apt-get autoremove <pkg(optional)
+removes packages with its unnecessary dependencies to OS.
+If executed without mentioning pkg, remove every unnecessary auto installed package.
+
+                              /// CHAPTER - 5 \\\
+
+-> chown <user> <dir/file>
+changes the ownership of the file or directory.
+
+-> chgrp <group> <program>
+changes the group of a program.
+
+-> chmod <code> <file/dir>
+changes the file permissions for owner, groups, users.
+
+Representations of Permissions(CODE):
+________________________
+| Binary | Octal | rwx |
+|--------|-------|-----|
+|  000   |   0   | --- |
+|  001   |   1   | --x |
+|  010   |   2   | -w- |
+|  011   |   3   | -wx |
+|  100   |   4   | r-- |
+|  101   |   5   | r-x |
+|  110   |   6   | rw- |
+|  111   |   7   | rwx |
+|________|_______|_____|
+
+Permission symbols(UGO):
+_________________________________
+| symbol |      description     |
+|--------|----------------------|
+|   -    | Removes a permission |
+|   +    |   Adds a permission  |
+|   =    |   sets a permission  |
+|________|______________________|
+
+Eg. chmod u-w hashcat.hcstat - taking permission from users to write.
+
+if you set a 4 before the code then it will become a SUID permission which will
+
+                              /// CHAPTER - 6 \\\
+symbol:
+&: after a command it will not hold the prompt but rather start the cmd & let us execute other scripts. 
+
+
+-> ps
+shows running process simply.
+> aux: shows much detailed view of the process.
+
+-> top
+shows top greediest processes.
+
+-> nice -n <num> <process>
+adds <num> to priority of <process>
+
+-> renice <priority> <PID>
+changes priority of process with <PID> to <priority>.
+
+-> kill -<opt_num> <PID>
++-----------+--------+--------------------------------------------+
+| Signal    | Number | Description                                |
++-----------+--------+--------------------------------------------+
+| SIGHUP    | 1      | Restarts process with same PID             |
+| SIGINT    | 2      | Interrupts process (Ctrl+C)                |
+| SIGQUIT   | 3      | Terminates and creates core dump           |
+| SIGTERM   | 15     | Gracefully stops the process               |
+| SIGKILL   | 9      | Forcefully kills the process               |
++-----------+--------+--------------------------------------------+
+
+-> fg <PID>
+moves process to foreground & show its window.
+
+-> at <time_format>
+
++----------------------------+----------------------------------------------+
+| Time Format                | Meaning                                      |
++----------------------------+----------------------------------------------+
+| at 7:20pm                  | Runs at 7:20 pm today                        |
+| at 7:20pm June 25          | Runs at 7:20 pm on June 25                   |
+| at noon                    | Runs at noon today                           |
+| at noon June 25            | Runs at noon on June 25                      |
+| at tomorrow                | Runs tomorrow                                |
+| at now + 20 minutes        | Runs in 20 minutes                           |
+| at now + 10 hours          | Runs in 10 hours                             |
+| at now + 5 days            | Runs in 5 days                               |
+| at now + 3 weeks           | Runs in 3 weeks                              |
+| at 7:20pm 06/25/2019       | Ran at 7:20 pm on June 25, 2019              |
++----------------------------+----------------------------------------------+
+
+after running this cmd it will prompt for process address.
+
+                              /// CHAPTER - 7 \\\
+
+-> env
+shows all pre-defined variables(defauls one).
+
+-> set
+an alias of env. shows all env variables if runned without arguments.
+
+-> export <var_name>
+it make the variable value as parmanent system saved value.
+
+-> unset <var_name>
+deletes a system variable.
+
+                              /// CHAPTER - 7 \\\
+
+shebang: #!<location_to_interpreter>
+its a symbol called shebang used to tell OS which interpreter to use & where its located.
+
+Example:
++----------------------------+-----------+
+|       Shebang Line         | Language  |
++----------------------------+-----------+
+| #!/bin/bash                | Bash      |
+| #!/usr/bin/env python3     | Python 3  |
+| #!/usr/bin/perl            | Perl      |
++----------------------------+-----------+
+
+Bash script commands:
++------------+---------------------------------------------------------------+
+| Command    | Function                                                      |
++------------+---------------------------------------------------------------+
+| :          | Returns 0 (true); does nothing                                |
+| . script   | Executes a shell script                                       |
+| bg         | Puts a job in the background                                  |
+| break      | Exits the current loop                                        |
+| cd         | Changes the current directory                                 |
+| continue   | Resumes the next iteration of a loop                          |
+| echo       | Displays the command arguments                                |
+| eval       | Evaluates the following expression                            |
+| exec       | Replaces the current shell with the given command             |
+| exit       | Quits the shell                                               |
+| export     | Makes a variable/function available to child processes        |
+| fg         | Brings a job to the foreground                                |
+| getopts    | Parses positional parameters                                  |
+| jobs       | Lists background jobs                                         |
+| pwd        | Prints the current working directory                          |
+| read       | Reads a line from standard input                              |
+| readonly   | Declares a variable as read-only                              |
+| set        | Lists or sets shell options and positional parameters         |
+| shift      | Shifts positional parameters to the left                      |
+| test       | Evaluates a conditional expression                            |
+| [[         | Performs a conditional test (more versatile than `test`)      |
+| times      | Prints shell and child process time statistics                |
+| trap       | Sets a trap for a signal                                      |
+| type       | Shows how a command name is interpreted                       |
+| umask      | Sets default file permissions                                 |
+| unset      | Unsets a variable or function                                 |
+| wait       | Waits for background processes to finish                      |
++------------+---------------------------------------------------------------+
 
 
 
