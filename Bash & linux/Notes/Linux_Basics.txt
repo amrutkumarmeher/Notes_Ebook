@@ -242,7 +242,7 @@ it make the variable value as parmanent system saved value.
 -> unset <var_name>
 deletes a system variable.
 
-                              /// CHAPTER - 7 \\\
+                              /// CHAPTER - 8 \\\
 
 shebang: #!<location_to_interpreter>
 its a symbol called shebang used to tell OS which interpreter to use & where its located.
@@ -289,5 +289,63 @@ Bash script commands:
 | wait       | Waits for background processes to finish                      |
 +------------+---------------------------------------------------------------+
 
+                              /// CHAPTER - 9 \\\
 
+-> tar <option> <files>
+used to compress & archieve files.
+> options:
++--------+----------------------------------------------------------+
+| Option | Short Description                                        |
++--------+----------------------------------------------------------+
+| -c     | Create a new archive.                                    |
+| -x     | Extract files from an archive.                           |
+| -f     | Specify the archive file name.                           |
+| -t     | List contents of an archive.                             |
+| -u     | Add new files to an existing archive.                    |
+| -v     | Show detailed output (verbose mode).                     |
+| -A     | Concatenate multiple archives into one.                  |
+| -z     | Use gzip compression (.tar.gz).                          |
+| -j     | Use bzip2 compression (.tar.bz2).                        |
+| -W     | Verify archive integrity.                                |
+| -r     | Update/add files to existing archive without recreation. |
++--------+----------------------------------------------------------+
+
+-> dd if=<input_device_address> of=<output_device_address>
+used to copy bit by bit a whole device & its every bit.
+
+                             /// CHAPTER - 10 \\\
+
+directory:
+/dev: stores devices
+/mnt: stores mounted devices
+/media: stores directories for mounted storage devices
+
+Device-Naming System:
++--------+------------------------+
+| Device | Description            |
++--------+------------------------+
+| sda    | First SATA hard drive  |
+| sdb    | Second SATA hard drive |
+| sdc    | Third SATA hard drive  |
+| sdd    | Fourth SATA hard drive |
++--------+------------------------+
+
+Partition-Labeling System:
++----------+-----------------------------------------------+
+| Partition | Description                                  |
++----------+-----------------------------------------------+
+| sda1     | 1st partition on 1st SATA drive               |
+| sda2     | 2nd partition on 1st drive                    |
+| sda3     | 3rd partition on 1st drive                    |
+| sda4     | 4th partition on 1st drive                    |
++----------+-----------------------------------------------+
+
+-> fdisk -l
+shows partation table
+
+-> lsblk
+list file partations & devices in tree structure.
+
+-> df
+show information about mounted disk
 
