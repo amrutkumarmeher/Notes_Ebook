@@ -261,7 +261,7 @@ Bash script commands:
 | Command    | Function                                                      |
 +------------+---------------------------------------------------------------+
 | :          | Returns 0 (true); does nothing                                |
-| . script   | Executes a shell script                                       |
+| .script    | Executes a shell script                                       |
 | bg         | Puts a job in the background                                  |
 | break      | Exits the current loop                                        |
 | cd         | Changes the current directory                                 |
@@ -348,4 +348,45 @@ list file partations & devices in tree structure.
 
 -> df
 show information about mounted disk
+
+                             /// CHAPTER - 11 \\\
+
+daemon:
+rsyslog: a software used to logging activity in the system.
+logrotate: used to clear log periodically.
+
+files:
+/etc/rsyslog.conf: used to store rsyslog configurations.
+ - in its RULES section, there are rules which tells what to log.
+ - rules are in following format:
+      facility(program/daemon).priority(need to log or urge)        action(where to store)
+ - it has the following priority:
+debug (lowest)
+info
+notice
+warning
+err
+crit
+alert
+emerg (highest)
+
+/etc/logrotate.conf: used to store configuration for logrotate.
+- here first uncommented word tells time counted as per rotation interval.
+- second word, which gonna be rotate <num>, here <num> tells how many rotations gonna be done before archiving.
+- if you uncomment `compress` word, your logs details will be in compressed form.
+- include <location>, here <location> tell where to store log rotation details.
+
+directory:
+/var/log: used to store different types of logs. It has whole history of the system.
+
+-> shred <options> <file>
+used to overwrite a file several time to make it hard to recover if deleted. by default it overrides 4 times.
+> -f: gives shred permission to corrupt a file. its force.
+> -n <num>: tells shred how many times it has to overwrite.
+
+-> service <service_name> <start/stop/restart>
+used to manage a service in system.
+
+                             /// CHAPTER - 12 \\\
+
 
