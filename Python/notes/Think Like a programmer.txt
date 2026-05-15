@@ -1,0 +1,20 @@
+................... THINK LIKE A PROGRAMMER ....................
+
+Termology:
+Constraint: A requirement or rule while solving a problem.
+
+Lessons Learned:
+-> the fox,the goose & the corn problem: Restarting the problem with different pov.
+-> Sliding puzzle: It better to have a strategy & goal in mind than trial & error only.
+-> Sudoku: try to solve variable with most constraint first.
+-> The Quarrasi Lock: analyzing different forms(analogies) of a problem.
+
+General Problem-Solving Techniques:
+1. Always have a plan.
+2. Restate the Problem.
+3. Divide the Problem.
+4. Start with What you know.
+5. Reduce the Problem.
+6. Look for Analogies.
+7. Experiment.
+8. Don't Get Frustrated.
