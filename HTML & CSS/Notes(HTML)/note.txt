@@ -4,13 +4,13 @@
 --> html webpage has 2 most important components: <head>(end: </head>) & <body>(end: </body>).
 --> <title>(end: </title>) used to specify title of a webpage.
 --> <img> is used to show image. It can't have any child elements thats why it don't have any closing tag.
---> <p>(end: </p>) stands for parigraph used to show text.
+--> <p>(end: </p>) stands for paragraph used to show text.
 --> <style>(end: </style) used to specify CSS script.
 --> <h(1/2/3/4/5/6)>(end: </h<num>) to specify headings.
 --> <a href="<url>">(end: </a>) used to specify a text where we can click to redirect to a link.
 --> <br> used to create line breakers.
 --> <big>(end: </big>) is used to specify little big font then usual.
---> <small>(end: </small>) is used to specity little small font then usual.
+--> <small>(end: </small>) is used to specify little small font then usual.
 --> <hr> is used to put a divider there.
 --> <sub>(end: </sub>) is used to write subscript which can be seen smaller than actual script. like CO2. 2 is sunscript.
 --> <sup>(end: </sup>) is used to write superscript which can be seen smaller than actual script but lying at the top. eg: A^2.
